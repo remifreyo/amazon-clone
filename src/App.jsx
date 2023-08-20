@@ -3,17 +3,19 @@ import Header from './Header'
 import Home from './Home'
 import Checkout from './Checkout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './Login'
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
-        <Header />
         <Routes>
+          <Route path="login" element={<Login />} />
           <Route
             path="/"
             element={
               <>
+                <Header />
                 <Home />
               </>
             }
@@ -22,6 +24,7 @@ const App = () => {
             path="/checkout"
             element={
               <>
+                <Header />
                 <Checkout />
               </>
             }
