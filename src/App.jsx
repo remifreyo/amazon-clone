@@ -2,13 +2,14 @@ import './App.css'
 import Header from './Header'
 import Home from './Home'
 import Checkout from './Checkout'
-import { Routes, Route } from 'react-router-dom'
 import Login from './Login'
+import Payment from './Payment'
+import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider'
-import './Payment'
-import Payment from './Payment'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
 
 const App = () => {
   const [{}, dispatch] = useStateValue()
